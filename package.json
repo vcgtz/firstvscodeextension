@@ -10,14 +10,51 @@
     "Other"
   ],
   "activationEvents": [
-    "onCommand:firstvscodeextension.helloWorld"
+    "*"
   ],
   "main": "./out/extension.js",
   "contributes": {
+    "viewsContainers": {
+      "activitybar": [
+        {
+          "id": "package-explorer",
+          "title": "Package Explorer",
+          "icon": "images/robot.svg"
+        }
+      ]
+    },
+    "views": {
+      "package-explorer": [
+        {
+          "id": "package-dependencies",
+          "name": "Dependencies"
+        },
+        {
+          "id": "package-outline",
+          "name": "Outline"
+        }
+      ]
+    },
+    "configuration": {
+      "title": "My First VSCode",
+      "properties": {
+        "firstvscodeextension.advanced.number": {
+          "description": "Set a number",
+          "type": "integer",
+          "default": 99
+        }
+      }
+    },
     "commands": [
       {
         "command": "firstvscodeextension.helloWorld",
-        "title": "Hello World"
+        "title": "Hello World",
+        "category": "FirstVSCodeExtension"
+      },
+      {
+        "command": "firstvscodeextension.bye",
+        "title": "Bye",
+        "category": "FirstVSCodeExtension"
       }
     ]
   },
